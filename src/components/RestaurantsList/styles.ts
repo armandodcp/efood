@@ -15,8 +15,3 @@ export const List = styled.ul`
     column-gap: 20px;
   }
 `
-
-export const Titulo = styled.h2`
-  font-size: 18px;
-  font-weight: bold;
-`

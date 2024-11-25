@@ -17,6 +17,6 @@ export const ButtonLink = styled(Link)<Props>`
 export const ButtonClick = styled(ButtonLink)`
   background-color: ${cores.pessego};
   color: ${cores.coral};
-  width: 100%;
+  width: ${(props) => (props.size === 'small' ? '' : '100%')};
   text-align: center;
 `

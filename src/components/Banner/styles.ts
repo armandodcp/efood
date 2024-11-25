@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { cores } from '../../styles'
 
-export const Imagem = styled.div`
+export const Cover = styled.div`
   width: 100%;
   height: 280px;
   display: block;
@@ -26,15 +26,16 @@ export const Imagem = styled.div`
   }
 `
 
-export const Comida = styled.h2`
+export const Cooking = styled.h2`
   position: absolute;
   top: 25px;
   font-size: 32px;
   font-weight: 100;
   color: ${cores.branca};
+  text-transform: capitalize;
 `
 
-export const Titulo = styled.h2`
+export const Title = styled.h2`
   font-size: 32px;
   color: ${cores.branca};
 `

@@ -16,8 +16,3 @@ export const List = styled.ul`
     grid-template-columns: 1fr 1fr;
   }
 `
-
-export const Titulo = styled.h2`
-  font-size: 18px;
-  font-weight: bold;
-`

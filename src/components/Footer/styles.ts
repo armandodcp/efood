@@ -34,7 +34,7 @@ export const Links = styled.img`
   margin-top: 8px;
 `
 
-export const Info = styled.p`
+export const Disclaimer = styled.p`
   margin-top: 72px;
   height: auto;
 

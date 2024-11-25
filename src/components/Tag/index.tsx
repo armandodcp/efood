@@ -1,9 +1,12 @@
 import { TagContainer } from './styles'
 
 export type Props = {
+  $cooking?: boolean
   children: string
 }
 
-const Tag = ({ children }: Props) => <TagContainer>{children}</TagContainer>
+const Tag = ({ $cooking, children }: Props) => (
+  <TagContainer $cooking={$cooking}>{children}</TagContainer>
+)
 
 export default Tag

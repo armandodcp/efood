@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import {
   Container,
   FooterSection,
-  Info,
+  Disclaimer,
   Links,
   LinksContainer,
   Logo
@@ -27,11 +27,11 @@ const Footer = () => (
           <Links src={twitter} alt="Twitter" />
         </Link>
       </LinksContainer>
-      <Info>
+      <Disclaimer>
         A efood é uma plataforma para divulgação de estabelecimentos, a
         responsabilidade pela entrega, qualidade
         <br /> dos produtos é toda do estabelecimento contratado.
-      </Info>
+      </Disclaimer>
     </FooterSection>
   </Container>
 )

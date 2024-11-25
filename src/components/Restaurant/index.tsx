@@ -1,64 +1,76 @@
-import Tag from '../Tag'
 import {
-  Avaliacao,
-  AvaliacaoContainer,
+  Review,
+  ReviewContainer,
   Card,
-  Descricao,
+  Description,
   DescriptionContainer,
-  Estrela,
-  Imagem,
-  Infos,
-  Titulo,
-  TituloContainer
+  Star,
+  Image,
+  Information,
+  Title,
+  TitleContainer
 } from './styles'
-import estrela from '../../assets/images/others/estrela.png'
+import Tag from '../Tag'
 import Button from '../Button'
+import star from '../../assets/images/others/estrela.png'
 
 type Props = {
   image: string
-  infos: string[]
+  featured: boolean
+  infos: string
   title: string
-  rating: string
+  rating: number
   description: string
-  page: string
-  link: string
 }
 
 const Restaurant = ({
   image,
+  featured,
   infos,
   title,
   rating,
-  description,
-  page,
-  link
-}: Props) => (
-  <Card>
-    <Imagem src={image} alt={title} />
-    <Infos>
-      {infos.map((info) => (
-        <Tag key={info}>{info}</Tag>
-      ))}
-    </Infos>
-    <DescriptionContainer>
-      <TituloContainer>
-        <Titulo>{title}</Titulo>
-        <AvaliacaoContainer>
-          <Avaliacao>{rating}</Avaliacao>
-          <Estrela src={estrela} alt="Estrelas" />
-        </AvaliacaoContainer>
-      </TituloContainer>
-      <Descricao>{description}</Descricao>
-      <Button
-        size="big"
-        type="link"
-        to={page}
-        title="Clique aqui para mais detalhes do restaurante"
-      >
-        {link}
-      </Button>
-    </DescriptionContainer>
-  </Card>
-)
+  description
+}: Props) => {
+  const getDescription = (description: string) => {
+    if (description.length > 233) {
+      return description.slice(0, 229) + ' ...'
+    }
+    return description
+  }
+
+  const endereco = title
+    .replace(/\s+/g, '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+
+  return (
+    <Card>
+      <Image src={image} alt={title} />
+      <Information>
+        {featured && <Tag>Destaque da semana</Tag>}
+        <Tag $cooking={true}>{infos}</Tag>
+      </Information>
+      <DescriptionContainer>
+        <TitleContainer>
+          <Title>{title}</Title>
+          <ReviewContainer>
+            <Review>{rating}</Review>
+            <Star src={star} alt="Estrelas" />
+          </ReviewContainer>
+        </TitleContainer>
+        <Description>{getDescription(description)}</Description>
+        <Button
+          size="big"
+          type="link"
+          to={`/restaurantes/${endereco}`}
+          title="Clique aqui para mais detalhes do restaurante"
+        >
+          Saiba mais
+        </Button>
+      </DescriptionContainer>
+    </Card>
+  )
+}
 
 export default Restaurant

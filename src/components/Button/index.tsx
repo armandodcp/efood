@@ -12,7 +12,7 @@ export type Props = {
 const Button = ({ type, title, to, onClick, children, size }: Props) => {
   if (type === 'button') {
     return (
-      <ButtonClick type="button" title={title} onClick={onClick}>
+      <ButtonClick type="button" title={title} onClick={onClick} size={size}>
         {children}
       </ButtonClick>
     )
