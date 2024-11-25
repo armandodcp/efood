@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import Home from './pages/Home'
 import Restaurants from './pages/Restaurant'
 import ScrollToTop from './scroll'
@@ -8,6 +8,7 @@ const Rotas = () => {
     <>
       <ScrollToTop />
       <Routes>
+        <Route path="/" element={<Navigate to="/restaurantes" replace />} />
         <Route path="/restaurantes" element={<Home />} />
         <Route path="/restaurantes/:endereco" element={<Restaurants />} />
       </Routes>
