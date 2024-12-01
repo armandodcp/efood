@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { cores } from '../../styles'
-import fundo from '../../assets/images/others/fundo.png'
+import fundo from '../../assets/images/others/background.png'
 
 type Props = {
   $visible: boolean
@@ -51,6 +51,10 @@ export const Cart = styled.div<Props>`
   flex: 1;
   text-align: right;
   visibility: ${(props) => (props.$visible ? 'visible' : 'hidden')};
+
+  &:hover {
+    cursor: pointer;
+  }
 `
 
 export const Slogan = styled.h1`

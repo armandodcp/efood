@@ -12,7 +12,7 @@ import {
 } from './styles'
 import Tag from '../Tag'
 import Button from '../Button'
-import star from '../../assets/images/others/estrela.png'
+import star from '../../assets/images/others/star.png'
 
 type Props = {
   image: string
@@ -38,7 +38,7 @@ const Restaurant = ({
     return description
   }
 
-  const endereco = title
+  const pathRestaurant = title
     .replace(/\s+/g, '')
     .toLowerCase()
     .normalize('NFD')
@@ -63,7 +63,7 @@ const Restaurant = ({
         <Button
           size="big"
           type="link"
-          to={`/restaurantes/${endereco}`}
+          to={`/restaurantes/${pathRestaurant}`}
           title="Clique aqui para mais detalhes do restaurante"
         >
           Saiba mais

@@ -3,14 +3,16 @@ import { Menu } from '../../pages/Home'
 import Dish from '../Dish'
 
 type Props = {
+  restaurant: number
   dishes: Menu[]
 }
 
-const DishesList = ({ dishes }: Props) => (
+const DishesList = ({ restaurant, dishes }: Props) => (
   <div className="container">
     <List>
       {dishes.map((dish) => (
         <Dish
+          restaurant={restaurant}
           key={dish.id}
           image={dish.foto}
           price={dish.preco}

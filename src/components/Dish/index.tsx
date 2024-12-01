@@ -14,8 +14,11 @@ import {
 import { Menu } from '../../pages/Home'
 import Button from '../Button'
 import close from '../../assets/images/others/close.png'
+import { useDispatch } from 'react-redux'
+import { add, open } from '../../store/reducers/cart'
 
 type Props = {
+  restaurant: number
   image: string
   price: number
   id: number
@@ -35,7 +38,7 @@ interface ModalState extends Menu {
   porcao: string
 }
 
-const formatPrice = (price = 0) => {
+export const formatPrice = (price = 0) => {
   return new Intl.NumberFormat('pt-BR', {
     style: 'currency',
     currency: 'BRL'
@@ -43,6 +46,7 @@ const formatPrice = (price = 0) => {
 }
 
 const Dish = ({
+  restaurant,
   image,
   price,
   id,
@@ -78,6 +82,23 @@ const Dish = ({
       descricao: '',
       porcao: ''
     })
+  }
+
+  const dispatch = useDispatch()
+
+  const addToCart = () => {
+    const dish: Menu = {
+      foto: image,
+      preco: price,
+      id: id,
+      nome: title,
+      descricao: description,
+      porcao: portion
+    }
+
+    dispatch(add({ restaurant, dish }))
+    closeModal()
+    dispatch(open())
   }
 
   return (
@@ -123,7 +144,12 @@ const Dish = ({
               <h3>{title}</h3>
               <p>{description}</p>
               <div>{portion}</div>
-              <Button type="button" title="Adicionar ao carrinho" size="small">
+              <Button
+                type="button"
+                title="Adicionar ao carrinho"
+                size="small"
+                onClick={addToCart}
+              >
                 {`Adicionar ao carrinho - ${formatPrice(price)}`}
               </Button>
             </TextContent>
