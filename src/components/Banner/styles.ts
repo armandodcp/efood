@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 
 export const Cover = styled.div`
   width: 100%;
@@ -31,11 +31,11 @@ export const Cooking = styled.h2`
   top: 25px;
   font-size: 32px;
   font-weight: 100;
-  color: ${cores.branca};
+  color: ${colors.white};
   text-transform: capitalize;
 `
 
 export const Title = styled.h2`
   font-size: 32px;
-  color: ${cores.branca};
+  color: ${colors.white};
 `

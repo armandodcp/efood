@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 import trash from '../../assets/images/others/trash.png'
 
 export const Overlay = styled.div`
@@ -8,7 +8,7 @@ export const Overlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: ${cores.preta};
+  background-color: ${colors.black};
   opacity: 0.8;
 `
 
@@ -28,18 +28,22 @@ export const CartContainer = styled.div`
 `
 
 export const Sidebar = styled.aside`
-  background-color: ${cores.coral};
+  background-color: ${colors.coral};
   z-index: 1;
   padding: 32px 8px 32px 8px;
   max-width: 360px;
   width: 100%;
   overflow: auto;
+
+  p {
+    color: ${colors.peach};
+  }
 `
 
-export const Prices = styled.p`
+export const Prices = styled.div`
   font-weight: bold;
   font-size: 14px;
-  color: ${cores.pessego};
+  color: ${colors.peach};
   margin-top: 40px;
   margin-bottom: 16px;
   display: flex;
@@ -56,7 +60,7 @@ export const Prices = styled.p`
 `
 
 export const CartItem = styled.li`
-  background-color: ${cores.pessego};
+  background-color: ${colors.peach};
   display: flex;
   padding: 8px 0 12px 8px;
   position: relative;
@@ -70,7 +74,7 @@ export const CartItem = styled.li`
   }
 
   h3 {
-    color: ${cores.coral};
+    color: ${colors.coral};
     font-weight: bold;
     font-size: 18px;
   }
@@ -95,4 +99,61 @@ export const CartItem = styled.li`
       cursor: pointer;
     }
   }
+`
+
+export const FormDelivery = styled.div`
+  color: ${colors.peach};
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 24px;
+
+  h3 {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  p {
+    font-size: 14px;
+    font-weight: normal;
+    margin: 16px 0 24px 0;
+  }
+
+  label {
+    display: block;
+    font-size: 14px;
+    margin: 8px 0;
+  }
+
+  input {
+    background-color: ${colors.peach};
+    font-weight: bold;
+    width: 100%;
+    height: 32px;
+    border: none;
+    padding: 8px;
+
+    &.error {
+      border: 2px solid red;
+    }
+  }
+
+  .input-card {
+    min-width: 228px;
+  }
+`
+
+export const InputGroup = styled.div`
+  label {
+    display: block;
+  }
+`
+
+export const Row = styled.div`
+  display: flex;
+  column-gap: 34px;
+  align-items: flex-end;
+`
+
+export const ButtonGroup = styled.div`
+  margin: 8px 0;
 `

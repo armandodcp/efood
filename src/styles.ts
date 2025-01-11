@@ -1,10 +1,10 @@
 import { createGlobalStyle } from 'styled-components'
 
-export const cores = {
-  branca: '#fff',
-  preta: '#000',
-  creme: '#fff8f2',
-  pessego: '#ffebd9',
+export const colors = {
+  white: '#fff',
+  black: '#000',
+  cream: '#fff8f2',
+  peach: '#ffebd9',
   coral: '#e66767'
 }
 
@@ -18,8 +18,8 @@ export const GlobalCss = createGlobalStyle`
   }
 
   body {
-    background-color: ${cores.creme};
-    color: ${cores.coral};
+    background-color: ${colors.cream};
+    color: ${colors.coral};
   }
 
   .container {

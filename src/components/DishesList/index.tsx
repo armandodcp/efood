@@ -1,6 +1,5 @@
-import { List } from './styles'
-import { Menu } from '../../pages/Home'
 import Dish from '../Dish'
+import * as S from './styles'
 
 type Props = {
   restaurant: number
@@ -9,7 +8,7 @@ type Props = {
 
 const DishesList = ({ restaurant, dishes }: Props) => (
   <div className="container">
-    <List>
+    <S.List>
       {dishes.map((dish) => (
         <Dish
           restaurant={restaurant}
@@ -23,7 +22,7 @@ const DishesList = ({ restaurant, dishes }: Props) => (
           button="Mais detalhes"
         />
       ))}
-    </List>
+    </S.List>
   </div>
 )
 

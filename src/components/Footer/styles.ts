@@ -1,12 +1,12 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 
 export const Container = styled.footer`
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 298px;
-  background-color: ${cores.pessego};
+  background-color: ${colors.peach};
   font-size: 10px;
 
   @media (max-width: 640px) {

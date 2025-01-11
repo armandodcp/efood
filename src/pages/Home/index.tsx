@@ -1,26 +1,6 @@
-import { Slogan } from '../../components/Header/styles'
-import RestaurantsList from '../../components/RestaurantsList'
 import { useGetRestaurantsQuery } from '../../services/api'
-
-export interface Menu {
-  foto: string
-  preco: number
-  id: number
-  nome: string
-  descricao: string
-  porcao: string
-}
-
-export type Restaurants = {
-  id: number
-  titulo: string
-  destacado: boolean
-  tipo: string
-  avaliacao: number
-  descricao: string
-  capa: string
-  cardapio: Menu[]
-}
+import RestaurantsList from '../../components/RestaurantsList'
+import * as S from '../../components/Header/styles'
 
 const Home = () => {
   const { data: restaurants } = useGetRestaurantsQuery()
@@ -28,11 +8,11 @@ const Home = () => {
   if (restaurants) {
     return (
       <>
-        <Slogan>
+        <S.Slogan>
           Viva experiências gastronômicas
           <br />
           no conforto da sua casa
-        </Slogan>
+        </S.Slogan>
         <RestaurantsList restaurants={restaurants} />
       </>
     )

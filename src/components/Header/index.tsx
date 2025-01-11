@@ -1,9 +1,9 @@
 import { useLocation } from 'react-router-dom'
-import { Cart, HeaderContainer, HomeLink, Logo, Menu } from './styles'
-import logo from '../../assets/images/logo.svg'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
 import { open } from '../../store/reducers/cart'
+import logo from '../../assets/images/logo.svg'
+import * as S from './styles'
 
 const Header = () => {
   const path = useLocation().pathname
@@ -15,19 +15,19 @@ const Header = () => {
   }
 
   return (
-    <HeaderContainer>
+    <S.HeaderContainer>
       <div className="container">
-        <Menu $visible={navigation}>
-          <HomeLink to="/restaurantes">Restaurantes</HomeLink>
-        </Menu>
-        <HomeLink to="/restaurantes">
-          <Logo src={logo} alt="EFOOD" />
-        </HomeLink>
-        <Cart $visible={navigation} onClick={openCart}>
+        <S.Menu $visible={navigation}>
+          <S.HomeLink to="/restaurantes">Restaurantes</S.HomeLink>
+        </S.Menu>
+        <S.HomeLink to="/restaurantes">
+          <S.Logo src={logo} alt="EFOOD" />
+        </S.HomeLink>
+        <S.Cart $visible={navigation} onClick={openCart}>
           {items.length} produto(s) no carrinho
-        </Cart>
+        </S.Cart>
       </div>
-    </HeaderContainer>
+    </S.HeaderContainer>
   )
 }
 

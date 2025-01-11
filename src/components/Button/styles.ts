@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 import { Props } from '.'
 
 export const ButtonLink = styled(Link)<Props>`
-  background-color: ${cores.coral};
-  color: ${cores.pessego};
+  background-color: ${colors.coral};
+  color: ${colors.peach};
   font-size: 14px;
   font-weight: bold;
   padding: 4px 6px;
@@ -14,9 +14,15 @@ export const ButtonLink = styled(Link)<Props>`
   text-decoration: none;
 `
 
-export const ButtonClick = styled(ButtonLink)`
-  background-color: ${cores.pessego};
-  color: ${cores.coral};
-  width: ${(props) => (props.size === 'small' ? '' : '100%')};
+export const ButtonClick = styled.button<Props>`
+  background-color: ${colors.peach};
+  color: ${colors.coral};
+  font-size: 14px;
+  font-weight: bold;
+  padding: 4px 6px;
+  width: ${(props) => (props.size === 'small' ? 'auto' : '100%')};
+  margin: ${(props) => (props.size === 'big' ? '8px' : '0')};
   text-align: center;
+  border: none;
+  cursor: pointer;
 `

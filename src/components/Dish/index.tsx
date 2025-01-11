@@ -1,21 +1,10 @@
 import { useState } from 'react'
-import {
-  Card,
-  ContentContainer,
-  Description,
-  Image,
-  ImageModal,
-  Modal,
-  ModalContent,
-  TextContent,
-  Title,
-  TitleContainer
-} from './styles'
-import { Menu } from '../../pages/Home'
-import Button from '../Button'
-import close from '../../assets/images/others/close.png'
 import { useDispatch } from 'react-redux'
 import { add, open } from '../../store/reducers/cart'
+import { parseToBrl } from '../../utils'
+import Button from '../Button'
+import close from '../../assets/images/others/close.png'
+import * as S from './styles'
 
 type Props = {
   restaurant: number
@@ -36,13 +25,6 @@ interface ModalState extends Menu {
   nome: string
   descricao: string
   porcao: string
-}
-
-export const formatPrice = (price = 0) => {
-  return new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL'
-  }).format(price)
 }
 
 const Dish = ({
@@ -103,12 +85,12 @@ const Dish = ({
 
   return (
     <>
-      <Card>
-        <Image src={image} alt={title} />
-        <TitleContainer>
-          <Title>{title}</Title>
-        </TitleContainer>
-        <Description>{getDescription(description)}</Description>
+      <S.Card>
+        <S.Image src={image} alt={title} />
+        <S.TitleContainer>
+          <S.Title>{title}</S.Title>
+        </S.TitleContainer>
+        <S.Description>{getDescription(description)}</S.Description>
         <Button
           type="button"
           title="Clique aqui para mais detalhes"
@@ -126,9 +108,9 @@ const Dish = ({
         >
           {button}
         </Button>
-      </Card>
-      <Modal className={modal.isVisible ? 'visivel' : ''}>
-        <ModalContent className="container">
+      </S.Card>
+      <S.Modal className={modal.isVisible ? 'visivel' : ''}>
+        <S.ModalContent className="container">
           <header>
             <img
               src={close}
@@ -138,9 +120,9 @@ const Dish = ({
               }}
             />
           </header>
-          <ContentContainer>
-            <ImageModal src={image} alt={title} />
-            <TextContent>
+          <S.ContentContainer>
+            <S.ImageModal src={image} alt={title} />
+            <S.TextContent>
               <h3>{title}</h3>
               <p>{description}</p>
               <div>{portion}</div>
@@ -150,18 +132,18 @@ const Dish = ({
                 size="small"
                 onClick={addToCart}
               >
-                {`Adicionar ao carrinho - ${formatPrice(price)}`}
+                {`Adicionar ao carrinho - ${parseToBrl(price)}`}
               </Button>
-            </TextContent>
-          </ContentContainer>
-        </ModalContent>
+            </S.TextContent>
+          </S.ContentContainer>
+        </S.ModalContent>
         <div
           onClick={() => {
             closeModal()
           }}
           className="overlay"
         ></div>
-      </Modal>
+      </S.Modal>
     </>
   )
 }

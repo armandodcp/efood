@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 import fundo from '../../assets/images/others/background.png'
 
 type Props = {
@@ -25,7 +25,7 @@ export const HeaderContainer = styled.header`
 
 export const HomeLink = styled(Link)`
   font-size: 16px;
-  color: ${cores.coral};
+  color: ${colors.coral};
   font-weight: bold;
   text-decoration: none;
 `
@@ -37,7 +37,7 @@ export const Logo = styled.img`
 
 export const Menu = styled.div<Props>`
   font-size: 16px;
-  color: ${cores.coral};
+  color: ${colors.coral};
   font-weight: bold;
   flex: 1;
   text-align: left;
@@ -46,7 +46,7 @@ export const Menu = styled.div<Props>`
 
 export const Cart = styled.div<Props>`
   font-size: 16px;
-  color: ${cores.coral};
+  color: ${colors.coral};
   font-weight: bold;
   flex: 1;
   text-align: right;
@@ -58,7 +58,7 @@ export const Cart = styled.div<Props>`
 `
 
 export const Slogan = styled.h1`
-  color: ${cores.coral};
+  color: ${colors.coral};
   font-size: 36px;
   text-align: center;
   margin-top: -116px;

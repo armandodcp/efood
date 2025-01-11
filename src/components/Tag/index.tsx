@@ -1,4 +1,4 @@
-import { TagContainer } from './styles'
+import * as S from './styles'
 
 export type Props = {
   $cooking?: boolean
@@ -6,7 +6,7 @@ export type Props = {
 }
 
 const Tag = ({ $cooking, children }: Props) => (
-  <TagContainer $cooking={$cooking}>{children}</TagContainer>
+  <S.TagContainer $cooking={$cooking}>{children}</S.TagContainer>
 )
 
 export default Tag

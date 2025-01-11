@@ -1,10 +1,10 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 
 export const Card = styled.div`
-  background-color: ${cores.coral};
-  border: solid 8px ${cores.coral};
-  color: ${cores.pessego};
+  background-color: ${colors.coral};
+  border: solid 8px ${colors.coral};
+  color: ${colors.peach};
   position: relative;
 
   @media (max-width: 640px) {
@@ -66,8 +66,8 @@ export const Modal = styled.div`
 export const ModalContent = styled.div`
   max-width: 1024px;
   z-index: 1;
-  background-color: ${cores.coral};
-  color: ${cores.branca};
+  background-color: ${colors.coral};
+  color: ${colors.white};
   position: relative;
 
   header {

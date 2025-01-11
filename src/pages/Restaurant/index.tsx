@@ -1,10 +1,10 @@
 import { useParams } from 'react-router-dom'
-import Banner from '../../components/Banner'
-import DishesList from '../../components/DishesList'
 import {
   useGetRestaurantsQuery,
   useGetRestaurantQuery
 } from '../../services/api'
+import Banner from '../../components/Banner'
+import DishesList from '../../components/DishesList'
 
 const Restaurant = () => {
   const { data: restaurants } = useGetRestaurantsQuery()

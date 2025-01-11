@@ -1,13 +1,13 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 
 type Props = {
   $cooking?: boolean
 }
 
 export const TagContainer = styled.div<Props>`
-  background-color: ${cores.coral};
-  color: ${cores.pessego};
+  background-color: ${colors.coral};
+  color: ${colors.peach};
   font-size: 12px;
   font-weight: bold;
   padding: 6px 4px;

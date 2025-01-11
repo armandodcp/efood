@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 import { TagContainer } from '../Tag/styles'
 
 export const Card = styled.div`
-  background-color: ${cores.branca};
+  background-color: ${colors.white};
   position: relative;
 
   ${TagContainer} {
@@ -29,7 +29,7 @@ export const Information = styled.div`
 `
 
 export const DescriptionContainer = styled.div`
-  border: solid 1px ${cores.coral};
+  border: solid 1px ${colors.coral};
   border-width: 0 1px 1px 1px;
 `
 
@@ -55,7 +55,7 @@ export const ReviewContainer = styled.div`
 export const Review = styled.span`
   font-weight: bold;
   font-size: 18px;
-  color: ${cores.coral};
+  color: ${colors.coral};
   margin-right: 8px;
 `
 
